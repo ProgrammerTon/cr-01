@@ -7,6 +7,7 @@ type CourseItemProps = {
 
 const CourseItem = (props: CourseItemProps) => {
     const course: Course = props.course;
+    
     return (
         <li className="Course">{course.number} - {course.title}</li>
     );
