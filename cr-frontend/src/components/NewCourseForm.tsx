@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import { Course } from '../interfaces';
+import CoursesService from '../services/CoursesService';
 
 type NewCourseFormProps = {
-
+    onNewCourseCreated?: (newCourse: Course) => void,
 };
 
 const NewCourseForm = (props: NewCourseFormProps) => {
@@ -10,8 +12,21 @@ const NewCourseForm = (props: NewCourseFormProps) => {
     const handleNewCourseNumberChange = (e:React.ChangeEvent<HTMLInputElement>) => {
         setNewCourseNumber(e.target.value)
     }
-      const handleSave = () => {
-        alert(`${newCourseTitle} -- ${newCourseTitle}`)
+    const handleSave = () => {
+        const  newCourse = {
+            number: newCourseNumber,
+            title: newCourseTitle,
+        };
+        CoursesService.createCourse(newCourse)
+            .then(savedNewCourse => {
+                if (savedNewCourse !== null){
+                    if(props.onNewCourseCreated !== undefined){
+                        props.onNewCourseCreated(savedNewCourse);
+                    }
+                }else{
+                    alert("Save Error");
+                }  
+            });
     };
     return (
         <div>

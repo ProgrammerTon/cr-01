@@ -3,7 +3,7 @@ import { Module } from '@nestjs/common';
 //import { CourseController } from './course.controller';
 import { CoursesService } from './course.service';
 import { CoursesController } from './course.controller';
-import Course from './entities/course.entity';
+import Course from './course.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
 @Module({
