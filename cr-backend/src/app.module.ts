@@ -12,8 +12,8 @@ import Review from './course/review.entity';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: "mongodb+srv://ProgrammerTon:1234@cluster0.z51ft.mongodb.net/",
-      database: 'test1',
+      url: 'mongodb+srv://best:best@cluster0.i9ydoci.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0',
+      database: 'test1ad',
       entities: [Course, Review],
     }),
     /*
@@ -28,7 +28,7 @@ import Review from './course/review.entity';
     */
 
     TypeOrmModule.forFeature([Course]),
-    CourseModule
+    CourseModule,
   ],
   controllers: [AppController],
   providers: [AppService],

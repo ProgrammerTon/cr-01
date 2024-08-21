@@ -3,13 +3,13 @@ import { ObjectId } from 'mongodb';
 
 @Entity()
 export class Course {
-    @ObjectIdColumn()
-    id?: ObjectId;
+  @ObjectIdColumn()
+  id?: ObjectId;
 
-    @Column()
-    number: string;
+  @Column()
+  number: string;
 
-    @Column()
-    title: string;
+  @Column()
+  title: string;
 }
 export default Course;

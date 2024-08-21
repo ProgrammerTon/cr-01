@@ -1,4 +1,4 @@
 export class CreateCourseDto {
-    number: string;
-    title: string;
+  number: string;
+  title: string;
 }
