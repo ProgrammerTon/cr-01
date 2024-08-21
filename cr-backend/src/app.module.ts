@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { CourseModule } from './course/course.module';
 import Course from './course/course.entity';
+import Review from './course/review.entity';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import Course from './course/course.entity';
       type: 'mongodb',
       url: "mongodb+srv://ProgrammerTon:1234@cluster0.z51ft.mongodb.net/",
       database: 'test1',
-      entities: [Course],
+      entities: [Course, Review],
     }),
     /*
     TypeOrmModule.forRoot({
