@@ -31,18 +31,7 @@ export class CoursesService {
     async create(createCourseDto: CreateCourseDto){
         return this.coursesRepository.save(createCourseDto);
     }
-    async findAllReviews(): Promise<Review[]> {
-        return this.reviewsRepository.find();
+    async findAllReviews(courseId: ObjectId): Promise<Review[]> {
+        return this.reviewsRepository.find({where:{ courseId: courseId}});
     }
-    /*
-    async findAllReviews(courseId: string): Promise<Review[]> {
-        return this.reviewsRepository.find();
-    }
-        */
-    /*
-    async findAllReviews(courseId: string): Promise<Review[]> {
-        const objectId = new ObjectId(courseId); // Convert string to ObjectId
-        return this.reviewsRepository.find({ where: { courseId: objectId } });
-    }
-        */
 }

@@ -24,17 +24,9 @@ export class CoursesController {
         throw new HttpException('Bad request', HttpStatus.BAD_REQUEST);
       }
   }
-
-  @Get('/reviews')
-  async findAllReviews(): Promise<Review[]> {
-    return this.coursesService.findAllReviews();
-  }
-
-  /*
   @Get(':courseId/reviews')
   async findAllReviews(@Param('courseId') courseId: string): Promise<Review[]> {
-    //const objectId = new ObjectId(courseId);
-    return this.coursesService.findAllReviews(courseId);
-}
-    */
+    const objectId = new ObjectId(courseId);
+    return this.coursesService.findAllReviews(objectId);
+  }
 }
